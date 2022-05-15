@@ -41,7 +41,7 @@
             </div>
             
             <div class="mt-3">
-                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="#">MASUK</a>
+                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" style="background-color: #2F318B;" href="#">MASUK</a>
             </div>
             
             </form>
