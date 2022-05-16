@@ -20,6 +20,8 @@
 </head>
 
 <body>
+<form method="POST" action="{{ route('login') }}">
+  @csrf
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="content-wrapper d-flex align-items-center auth px-0">
@@ -33,15 +35,25 @@
             <h6 class="font-weight-light" style="text-align: center;">Masuk Akun Anda</h6>
             <form class="pt-3">
             <div class="form-group">
-                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                @error('email')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
             </div>
             <div class="form-group">
-                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                @error('password')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
                 <a href="#" class="auth-link text-black" style="text-align: right;">Lupa Password?</a>
             </div>
             
             <div class="mt-3">
-                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" style="background-color: #2F318B;" href="#">MASUK</a>
+                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" style="background-color: #2F318B;">MASUK</button>
             </div>
             
             </form>
@@ -67,6 +79,7 @@
   <script src="{{ asset('admin/js/settings.js') }}"></script>
   <script src="{{ asset('admin/js/todolist.js') }}"></script>
   <!-- endinject -->
+</form>
 </body>
 
 </html>
